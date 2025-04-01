@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Anamacharya Institute of Technology and Sciences</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-color: #1f2937;
+            --light-bg: #f3f4f6;
+            --white: #ffffff;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: var(--white);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            height: 45px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
+        }
+
+        .logo-text {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* About Section Styles */
+        .about-section {
+            margin-top: 100px;
+            padding: 4rem 5%;
+            background-color: var(--light-bg);
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .about-header h1 {
+            color: var(--text-color);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .about-header p {
+            color: var(--text-color);
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .professors-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .professor-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .professor-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .professor-image {
+            width: 100%;
+            height: 250px;
+            background-color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 4rem;
+        }
+
+        .professor-info {
+            padding: 2rem;
+        }
+
+        .professor-info h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .professor-info h4 {
+            color: var(--text-color);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .professor-info ul {
+            list-style: none;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .professor-info li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .professor-info li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--text-color);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            .about-header h1 {
+                font-size: 2rem;
+            }
+
+            .professors-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <img src="https://via.placeholder.com/50" alt="Institute Logo">
+            <span class="logo-text">AITS</span>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-header">
+            <h1>Our Faculty</h1>
+            <p>Meet our distinguished professors who are dedicated to providing quality education and shaping the future of technology.</p>
+        </div>
+
+        <div class="professors-container">
+            <!-- Professor 1 -->
+            <div class="professor-card">
+                <div class="professor-image">👨‍🏫</div>
+                <div class="professor-info">
+                    <h3>Dr. Rajesh Kumar</h3>
+                    <h4>Professor of Computer Science</h4>
+                    <ul>
+                        <li>Ph.D. in Computer Science from IIT Delhi</li>
+                        <li>M.Tech in Software Engineering</li>
+                        <li>15+ years of teaching experience</li>
+                        <li>Published 20+ research papers</li>
+                        <li>Expert in Machine Learning & AI</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Professor 2 -->
+            <div class="professor-card">
+                <div class="professor-image">👩‍🏫</div>
+                <div class="professor-info">
+                    <h3>Dr. Priya Sharma</h3>
+                    <h4>Associate Professor of Data Science</h4>
+                    <ul>
+                        <li>Ph.D. in Data Science from Stanford University</li>
+                        <li>M.S. in Statistics</li>
+                        <li>12+ years of industry experience</li>
+                        <li>Specialized in Big Data Analytics</li>
+                        <li>Multiple research publications</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Professor 3 -->
+            <div class="professor-card">
+                <div class="professor-image">👨‍🏫</div>
+                <div class="professor-info">
+                    <h3>Dr. Amit Patel</h3>
+                    <h4>Professor of Software Engineering</h4>
+                    <ul>
+                        <li>Ph.D. in Software Engineering from MIT</li>
+                        <li>M.Tech in Computer Science</li>
+                        <li>18+ years of teaching experience</li>
+                        <li>Expert in Cloud Computing</li>
+                        <li>Industry consultant for major tech companies</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Professor 4 -->
+            <div class="professor-card">
+                <div class="professor-image">👩‍🏫</div>
+                <div class="professor-info">
+                    <h3>Dr. Neha Gupta</h3>
+                    <h4>Associate Professor of Cybersecurity</h4>
+                    <ul>
+                        <li>Ph.D. in Cybersecurity from Georgia Tech</li>
+                        <li>M.S. in Information Security</li>
+                        <li>10+ years of research experience</li>
+                        <li>Certified Ethical Hacker</li>
+                        <li>Multiple patents in security systems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Professor 5 -->
+            <div class="professor-card">
+                <div class="professor-image">👨‍🏫</div>
+                <div class="professor-info">
+                    <h3>Dr. Sanjay Verma</h3>
+                    <h4>Professor of Artificial Intelligence</h4>
+                    <ul>
+                        <li>Ph.D. in AI from Carnegie Mellon</li>
+                        <li>M.Tech in Robotics</li>
+                        <li>20+ years of research experience</li>
+                        <li>Leading AI researcher</li>
+                        <li>Multiple international collaborations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Anamacharya Institute of Technology and Sciences. All rights reserved.</p>
+    </footer>
+</body>
+</html> 
